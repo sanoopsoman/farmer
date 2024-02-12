@@ -1,0 +1,30 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid bg-testimonial py-5 my-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="owl-carousel testimonial-carousel p-5">
+                    {% for i in feed %}
+                    {% comment %} <div class="testimonial-item text-center text-white">
+                        <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="{% static 'img/testimonial-2.jpg' %}" alt="">
+                        <p class="fs-5">Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                        <hr class="mx-auto w-25">
+                        <h4 class="text-white mb-0">Client Name</h4>
+                    </div> {% endcomment %}
+                    <div class="testimonial-item text-center text-white">
+                        <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="/static/media/{{i.fid.img}}" alt="">
+                        <h4>{{i.fid.name}}</h4>
+                        <p class="fs-5">{{i.content}}</p>
+                        <hr class="mx-auto w-25">
+                        <h4 class="text-white mb-0"><i class="fa fa-star" aria-hidden="true" style="color :goldenrod "></i> {{i.rating}}</h4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

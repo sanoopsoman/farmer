@@ -1,0 +1,95 @@
+{% extends 'farmtech/farmtechbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+            <h2 class="text-primary text-uppercase">Land Rent....!!!!</h2>
+            
+        </div>
+        <div class="row g-5">
+            {% for i in farm %}
+            <div class="col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10">
+                        <div class="position-relative" style="box-shadow: 0px 0px 10px rgb(182, 192, 196)">
+                            <img class="img-fluid w-100" src="/static/media/{{i.img}}" style="height:300px; width:auto; border-radius:10px" alt="">
+                            <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                <center>
+                                <h4 class="text-white">{{i.area}}</h4>
+                                <h4 class="text-white">{{i.duration}}</h4>
+                                <h4 class="text-white">{{i.amount}}</h4>
+                                </center>
+                                
+                               
+                            </div>
+                        </div>
+                        <br>
+                        <center>
+                        <a href="/deleteland?lid={{i.id}}" class="btn btn-danger" style="border-radius:5px;"><i class="fa fa-trash-o" aria-hidden="true"></i>delete</a>
+                        <a href="/updateland?lid={{i.id}}" class="btn btn-danger" style="border-radius:5px;"><i class="fa fa-wrench" aria-hidden="true"></i>update</a>
+                        </center>
+                    </div>
+                    {% comment %} <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+                {% endfor %}
+            </div>
+            {% comment %} <div class="col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{% static 'img/team-2.jpg' %}" alt="">
+                            <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                <h4 class="text-white">Farmer Name</h4>
+                                <span class="text-white">Designation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
+                        </div>
+                    </div> {% endcomment %}
+                {% comment %} </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{% static 'img/team-3.jpg' %}" alt="">
+                            <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                <h4 class="text-white">Farmer Name</h4>
+                                <span class="text-white">Designation</span>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+           
+        
+    
+
+<!-- Team End -->
+
+
+
+{% endblock %}

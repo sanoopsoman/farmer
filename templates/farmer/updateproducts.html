@@ -1,0 +1,91 @@
+{% extends 'farmer/farmerbase.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    label{
+        color: #000000;
+    }
+</style>
+ <!-- Contact Start -->
+ <div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+    
+            <h1 class="display-5">update product...!!</h1>
+        </div>
+        <div class="row g-0">
+            {% comment %} <div class="col-lg-7"> {% endcomment %}
+                <div class="bg-primary h-100 p-5">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% for i in update %}
+                         {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <input type="text" value="{{i.name}}" name="name" class="form-control bg-light border-0 px-4" placeholder="Your product Name" style="height: 55px;">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" value="{{i.price}}" name="price" class="form-control bg-light border-0 px-4" placeholder="enter your price" style="height: 55px;">
+                            </div>
+                            
+                            {% comment %} <div class="col-6">
+                                {% for i in farmer %}
+                                <input type="text" value="{{i.name}}" name="fname" class="form-control bg-light border-0 px-4" placeholder="farmer name" style="height: 55px;">
+                                {% endfor %}
+                            </div> {% endcomment %}
+                            <div class="col-6">
+                                <label for="quantity">Quantity</label>
+                                <input type="text" value="{{i.quantity}}" name="quantity" class="form-control bg-light border-0 px-4" placeholder="quantity" style="height: 55px;">
+                            </div>
+                            <div class="col-6">
+                                <label style="color:black;">photo:</label>
+                                <input type="file" value="{{i.img}}" name="img" class="form-control bg-light border-0 px-4" style="height: 55px;" >
+                            </div>
+                           
+                            
+                            <div class="col-12">
+                                <button class="btn btn-secondary w-100 py-3" type="submit">Update</button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </form>
+                </div>
+            {% comment %} </div> {% endcomment %}
+            {% comment %} <div class="col-lg-5">
+                <div class="bg-secondary h-100 p-5">
+                    <h2 class="text-white mb-4">Get In Touch</h2> {% endcomment %}
+                    {% comment %} <div class="d-flex mb-4">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-geo-alt fs-4 text-white"></i>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="ps-3">
+                            <h5 class="text-white">Our Office</h5>
+                            <span class="text-white">123 Street, New York, USA</span>
+                        </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="d-flex mb-4">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-envelope-open fs-4 text-white"></i>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="ps-3">
+                            <h5 class="text-white">Email Us</h5>
+                            <span class="text-white">info@example.com</span>
+                        </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    <div class="d-flex">
+                        {% comment %} <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-phone-vibrate fs-4 text-white"></i>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="ps-3">
+                            <h5 class="text-white">Call Us</h5>
+                            <span class="text-white">+012 345 6789</span>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+{% endblock %}
